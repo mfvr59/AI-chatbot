@@ -1,0 +1,125 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh;
+}
+
+.description {
+  display: flex; /* inherit removed for clarity */
+  justify-content: center; /* centralized for consistency */
+  align-items: center;
+  font-size: 0.85rem;
+  width: 100%;
+  max-width: var(--max-width);
+  z-index: 2;
+}
+
+.description a {
+  gap: 0.5rem;
+}
+
+.description p {
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+.assistant {
+  background-color: var(--bubble-color-chatbot);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  max-width: 80%;
+  align-self: flex-start; /* Align to the left */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+  font-size: 1rem;
+  color: #333; /* Dark text for light background */
+}
+
+.user {
+  background-color: var(--bubble-color-user);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  max-width: 80%;
+  align-self: flex-end; /* Align to the right */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional shadow for depth */
+  font-size: 1rem;
+  color: #333; /* Dark text for light background */
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  width: 100%;
+  max-width: var(--max-width);
+}
+
+.card {
+  background: none;
+  border: none;
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  transition: background 200ms, border 200ms;
+}
+
+.card:hover {
+  background: rgba(var(--card-rgb), 0.1);
+  border: 1px solid rgba(var(--card-border-rgb), 0.15);
+}
+
+.card span {
+  transition: transform 200ms;
+}
+
+.card:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  .card {
+    padding: 1rem 2.5rem;
+  }
+
+  .center {
+    padding: 8rem 0 6rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .description p,
+  .description div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1120px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .card span {
+    transform: none;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --foreground-rgb: 255, 255, 255;
+    background: linear-gradient(to bottom, #444, #333);
+  }
+}
